@@ -1,0 +1,93 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: doc
+spec:
+  version: v0.1.4
+  homepage: https://github.com/sttts/kubectl-doc
+  shortDescription: Render Kubernetes API documentation
+  description: |
+    Render Kubernetes OpenAPI v3 schemas as YAML-shaped documentation for
+    terminal, Markdown, HTML, and interactive documentation surfaces.
+
+    kubectl doc can read schemas from a live cluster or from local CRD
+    manifests. It supports YAML, Markdown, Kro SimpleSchema, HTML, browser,
+    and terminal UI output formats.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/sttts/kubectl-doc/releases/download/v0.1.4/kubectl-doc-v0.1.4-linux-amd64.tar.gz
+      sha256: f76be82143a5d3ffb81e1da0a53d0aa2608a7a14b9badc7443c0f055fdda5f51
+      files:
+        - from: kubectl-doc-v0.1.4-linux-amd64/kubectl-doc
+          to: .
+        - from: kubectl-doc-v0.1.4-linux-amd64/LICENSE
+          to: .
+      bin: kubectl-doc
+
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/sttts/kubectl-doc/releases/download/v0.1.4/kubectl-doc-v0.1.4-linux-arm64.tar.gz
+      sha256: ff942f2073d3158b0b961ccaa02342d2f9743db48e2d0d57a7526744213e98db
+      files:
+        - from: kubectl-doc-v0.1.4-linux-arm64/kubectl-doc
+          to: .
+        - from: kubectl-doc-v0.1.4-linux-arm64/LICENSE
+          to: .
+      bin: kubectl-doc
+
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/sttts/kubectl-doc/releases/download/v0.1.4/kubectl-doc-v0.1.4-darwin-amd64.tar.gz
+      sha256: ac29d40b5ef2ed101f186b28eafa184b900089a276c6daf65b045c88748225ac
+      files:
+        - from: kubectl-doc-v0.1.4-darwin-amd64/kubectl-doc
+          to: .
+        - from: kubectl-doc-v0.1.4-darwin-amd64/LICENSE
+          to: .
+      bin: kubectl-doc
+
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/sttts/kubectl-doc/releases/download/v0.1.4/kubectl-doc-v0.1.4-darwin-arm64.tar.gz
+      sha256: a7b4c271953bddef82bfd78af6917444688725d220c08344e6fa58b504c78059
+      files:
+        - from: kubectl-doc-v0.1.4-darwin-arm64/kubectl-doc
+          to: .
+        - from: kubectl-doc-v0.1.4-darwin-arm64/LICENSE
+          to: .
+      bin: kubectl-doc
+
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/sttts/kubectl-doc/releases/download/v0.1.4/kubectl-doc-v0.1.4-windows-amd64.zip
+      sha256: 50e5f7951daab91755e01682f26f6d35e85bf163ca6f4d4632233bd0b397b6ec
+      files:
+        - from: kubectl-doc-v0.1.4-windows-amd64/kubectl-doc.exe
+          to: .
+        - from: kubectl-doc-v0.1.4-windows-amd64/LICENSE
+          to: .
+      bin: kubectl-doc.exe
+
+    - selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+      uri: https://github.com/sttts/kubectl-doc/releases/download/v0.1.4/kubectl-doc-v0.1.4-windows-arm64.zip
+      sha256: 9c6867206f5c8a3e48ba79e6507a03f1cf77f6f74bf85ad4c490314fe58e3e9d
+      files:
+        - from: kubectl-doc-v0.1.4-windows-arm64/kubectl-doc.exe
+          to: .
+        - from: kubectl-doc-v0.1.4-windows-arm64/LICENSE
+          to: .
+      bin: kubectl-doc.exe
